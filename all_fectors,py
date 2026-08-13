@@ -1,0 +1,40 @@
+# find all factors of a given number
+# first method(brute solution)
+
+# num=int(input("enter the number :"))
+# factors=[]
+# for i in range(1,num+1):
+#     if num%i==0:
+#         factors.append(i)
+# print(factors)
+
+# time complexity=O(n)
+# space complexity=O(k) where k is the number of factors of the given number
+
+# 2nd method( better solution)
+
+# factors=[]
+# num=int(input("enter the number :"))
+# for i in range(1,num//2 +1):
+#     if num % i==0:
+#         factors.append(i)
+# print(factors)
+
+#timecomplexity=O(n/2)=O(n)
+# space complexity=O(k) where k is the number of factors of the given number
+
+# optimal solution
+
+import math 
+factors=[]
+num=int(input("enter the number :"))
+for i in range(1,int(math.sqrt(num))+1):
+    if num % i==0:
+        factors.append(i)
+        if i != num // i:
+            factors.append(num // i)
+factors.sort() # 0(nlogn) time complexity
+print(factors)
+
+# so total time complexity is O(sqrt(n)) + O(nlogn) = O(nlogn)
+# space complexity=O(k) where k is the number of factors of the given number
