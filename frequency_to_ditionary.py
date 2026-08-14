@@ -12,4 +12,11 @@ for i in range(0, len(num)):# time complexity=O(n) and space complexity=O(n)
 x = int(input("Enter the number to find its frequency: "))
 print(frequency[x])
 
-# method 2 pending ...
+# method 2 
+
+frequency = {}
+num=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5]
+for i in range(0, len(num)):
+    frequency[num[i]] = frequency.get(num[i], 0) + 1
+x=int(input("Enter the number to find its frequency: "))    
+print(frequency[x])
